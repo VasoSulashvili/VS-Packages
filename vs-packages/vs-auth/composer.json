@@ -1,0 +1,48 @@
+{
+    "name": "vs/auth",
+    "description": "Provides auth functionality.",
+    "homepage": "https://github.com/VasoSulashvili",
+    "license": "proprietary",
+    "support": {
+        "issues": "https://github.com/VasoSulashvili/auth/issues"
+    },
+    "type": "library",
+    "authors": [
+        {
+            "name": "Vaso Sulashvili",
+            "homepage": "https://github.com/VasoSulashvili",
+            "email": "v.sulashvili@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/VasoSulashvili/auth"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "auth\\": "src/"
+        },
+        "files": [
+        ]
+    },
+
+    "require": {
+        "igenerator/ibase": "dev-master",
+        "intervention/image": "^2.7",
+        "igenerator/itranslate2": "dev-master"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "VS\\Auth\\VSAuthServiceProvider"
+            ]
+        },
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

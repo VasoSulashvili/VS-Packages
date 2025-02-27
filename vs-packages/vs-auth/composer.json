@@ -4,7 +4,7 @@
     "homepage": "https://github.com/VasoSulashvili",
     "license": "proprietary",
     "support": {
-        "issues": "https://github.com/VasoSulashvili/auth/issues"
+        "issues": "https://github.com/VasoSulashvili/vs-auth/issues"
     },
     "type": "library",
     "authors": [
@@ -14,24 +14,16 @@
             "email": "v.sulashvili@gmail.com"
         }
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/VasoSulashvili/auth"
-        }
-    ],
     "autoload": {
         "psr-4": {
-            "auth\\": "src/"
+            "VS\\Auth\\": "src/"
         },
         "files": [
         ]
     },
-
     "require": {
-        "igenerator/ibase": "dev-master",
-        "intervention/image": "^2.7",
-        "igenerator/itranslate2": "dev-master"
+        "laravel/passport": "^12.4",
+        "vs/base": "dev-master"
     },
     "extra": {
         "laravel": {

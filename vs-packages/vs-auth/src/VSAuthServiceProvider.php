@@ -1,10 +1,13 @@
 <?php
 
-namespace App\Providers;
+namespace VS\Auth;
 
+use Laravel\Passport\Passport;
 use Illuminate\Support\ServiceProvider;
-
-class AppServiceProvider extends ServiceProvider
+use VS\Admin\Http\Middleware\AdminAuth;
+use VS\Auth\Http\Middleware\VSAuthClientMiddleware;
+use Laravel\Passport\Http\Middleware\CheckClientCredentials;
+class VSAuthServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
@@ -19,6 +22,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        $this->registerMiddleware();
+
+        Passport::hashClientSecrets();
+
+    }
+
+    protected function registerMiddleware()
+    {
+        // Register the middleware into Laravel's global middleware stack
+        $this->app['router']->aliasMiddleware('vs-auth.client.auth', VSAuthClientMiddleware::class);
     }
 }

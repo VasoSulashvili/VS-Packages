@@ -11,13 +11,25 @@
     "repositories": [
         {
             "type": "path",
-            "url": "packages/vs-auth"
+            "url": "vs-packages/vs-base"
+        },
+        {
+            "type": "path",
+            "url": "vs-packages/vs-auth"
+        },
+        {
+            "type": "path",
+            "url": "vs-packages/vs-admin"
         }
     ],
     "require": {
         "php": "^8.4",
         "laravel/framework": "^12.0",
-        "laravel/tinker": "^2.10.1"
+        "laravel/passport": "^12.0",
+        "laravel/tinker": "^2.10.1",
+        "vs/admin": "dev-master",
+        "vs/auth": "dev-master",
+        "vs/base": "dev-master"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

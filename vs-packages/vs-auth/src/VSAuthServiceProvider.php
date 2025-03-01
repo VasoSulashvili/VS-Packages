@@ -2,6 +2,7 @@
 
 namespace VS\Auth;
 
+use Illuminate\Support\Facades\Route;
 use Laravel\Passport\Passport;
 use Illuminate\Support\ServiceProvider;
 use VS\Admin\Http\Middleware\AdminAuth;
@@ -26,11 +27,17 @@ class VSAuthServiceProvider extends ServiceProvider
 
         Passport::hashClientSecrets();
 
+        $this->loadRoutesFrom(__DIR__ . '/../routes/api.php');
+//        Route::prefix('api/admin')
+//            ->middleware('api')
+//            ->group(__DIR__ . '/../routes/api.php');
+
     }
 
     protected function registerMiddleware()
     {
-        // Register the middleware into Laravel's global middleware stack
+
         $this->app['router']->aliasMiddleware('vs-auth.client.auth', VSAuthClientMiddleware::class);
+
     }
 }
